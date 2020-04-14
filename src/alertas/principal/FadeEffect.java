@@ -93,7 +93,7 @@ public class FadeEffect {
                 if (opacity <= 0) {                   
                     timer.stop();
                     frame.dispose();
-                    new PantallaLogIn.Login().setVisible(true);
+                    new PantallaLogI.Login().setVisible(true);
                 }
             }
         });
