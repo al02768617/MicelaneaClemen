@@ -47,7 +47,6 @@ public class AlertaExito extends javax.swing.JDialog {
         materialButton1 = new principal.MaterialButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(400, 389));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -243,9 +242,9 @@ public class AlertaExito extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Mensaje;
-    private javax.swing.JLabel Mensaje1;
-    private javax.swing.JLabel Titulo;
+    public static javax.swing.JLabel Mensaje;
+    public static javax.swing.JLabel Mensaje1;
+    public static javax.swing.JLabel Titulo;
     private javax.swing.JLabel jLabel1;
     private principal.MaterialButton materialButton1;
     private java.awt.Panel panel1;
