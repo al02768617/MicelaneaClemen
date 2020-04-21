@@ -12,9 +12,9 @@ import javax.swing.JFrame;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import tabla.EstiloTablaHeader;
-import tabla.EstiloTablaRenderer;
-import tabla.MyScrollbarUI;
+import Tabla.EstiloTablaHeader;
+import Tabla.EstiloTablaRenderer;
+import Tabla.MyScrollbarUI;
 
 /**
  *

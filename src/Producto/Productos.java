@@ -6,13 +6,13 @@
 package Producto;
 
 import alertas.principal.AlertaError;
-import alertas.principal.WarningAlertP;
-import alertas.principal.WarningAlertP1;
+import alertas.principal.AlertaP;
+import alertas.principal.AlertaP1;
 import javax.swing.JFrame;
 import javax.swing.ListSelectionModel;
-import tabla.EstiloTablaHeader;
-import tabla.EstiloTablaRenderer;
-import tabla.MyScrollbarUI;
+import Tabla.EstiloTablaHeader;
+import Tabla.EstiloTablaRenderer;
+import Tabla.MyScrollbarUI;
 
 /**
  *
@@ -361,11 +361,11 @@ public class Productos extends javax.swing.JInternalFrame {
                 er.setVisible(true);
             } else {
                 int fila = this.tabla.getSelectedRow();
-                WarningAlertP wa = new WarningAlertP(new JFrame(), true);
+                AlertaP wa = new AlertaP(new JFrame(), true);
                 wa.id.setText(this.tabla.getValueAt(fila, 0).toString());
-                wa.titulo.setText("¿ESTAS SEGURO?");
-                wa.msj.setText("SE BORRARA PERMANENTEMENTE");
-                wa.msj1.setText("");
+                wa.Titulo.setText("¿ESTAS SEGURO?");
+                wa.Mensaje.setText("SE BORRARA PERMANENTEMENTE");
+                wa.Mensaje1.setText("");
                 wa.setVisible(true);
             }
         }
@@ -379,10 +379,10 @@ public class Productos extends javax.swing.JInternalFrame {
             er.Mensaje1.setText("");
             er.setVisible(true);
         } else {
-            WarningAlertP1 wa = new WarningAlertP1(new JFrame(), true);
-            wa.titulo.setText("¿ESTAS SEGURO?");
-            wa.msj.setText("SE BORRARAN TODOS LOS");
-            wa.msj1.setText("REGISTROS PERMANENTEMENTE");
+            AlertaP1 wa = new AlertaP1(new JFrame(), true);
+            wa.Titulo.setText("¿ESTAS SEGURO?");
+            wa.Mensaje.setText("SE BORRARAN TODOS LOS");
+            wa.Mensaje1.setText("REGISTROS PERMANENTEMENTE");
             wa.setVisible(true);
         }
     }//GEN-LAST:event_eliminarTodoActionPerformed

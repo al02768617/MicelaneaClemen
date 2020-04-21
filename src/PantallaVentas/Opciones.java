@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Ventas;
+package PantallaVentas;
 
 import Conexion.ConexionBD;
 import java.sql.Connection;
@@ -90,7 +90,7 @@ public class Opciones {
     }
 
     public static void listar(String busca) {
-        DefaultTableModel modelo = (DefaultTableModel) Ventas.Productos.tabla.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) PantallaVentas.Productos.tabla.getModel();
 
         while (modelo.getRowCount() > 0) {
             modelo.removeRow(0);
@@ -124,7 +124,7 @@ public class Opciones {
     }
 
     public static void listarVentas(String busca) {
-        DefaultTableModel modelo = (DefaultTableModel) Ventas.ListaVentas.tabla.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) PantallaVentas.ListaVentas.tabla.getModel();
 
         while (modelo.getRowCount() > 0) {
             modelo.removeRow(0);
@@ -156,7 +156,7 @@ public class Opciones {
     }
 
     public static void listarEntradas(String fecha) {
-        DefaultTableModel modelo = (DefaultTableModel) Ventas.ModalCorteDelDia.ListaEntradas.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) PantallaVentas.ModalCorteDelDia.ListaEntradas.getModel();
 
         String sql = "SELECT * FROM ventas, producto WHERE fecha = '" + fecha + "' AND id_producto = idproducto";
         String datos[] = new String[3];
@@ -177,16 +177,16 @@ public class Opciones {
     }
 
     public static void corteEntradas() {
-        int filas = Ventas.ModalCorteDelDia.ListaEntradas.getRowCount();
+        int filas = PantallaVentas.ModalCorteDelDia.ListaEntradas.getRowCount();
         double totalE = 0.0;
         for (int i = 0; i < filas; i++) {
-            totalE = totalE + Double.parseDouble(Ventas.ModalCorteDelDia.ListaEntradas.getValueAt(i, 2).toString());
+            totalE = totalE + Double.parseDouble(PantallaVentas.ModalCorteDelDia.ListaEntradas.getValueAt(i, 2).toString());
         }
-        Ventas.ModalCorteDelDia.lblE.setText(String.valueOf(totalE));
+        PantallaVentas.ModalCorteDelDia.lblE.setText(String.valueOf(totalE));
     }
 
     public static void listarSalidas(String fecha) {
-        DefaultTableModel modelo = (DefaultTableModel) Ventas.ModalCorteDelDia.ListaSalidas.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) PantallaVentas.ModalCorteDelDia.ListaSalidas.getModel();
 
         String sql = "SELECT * FROM gastos WHERE fecha_gasto = '" + fecha + "'";
         String datos[] = new String[2];
@@ -206,18 +206,18 @@ public class Opciones {
     }
 
     public static void corteSalidas() {
-        int filas = Ventas.ModalCorteDelDia.ListaSalidas.getRowCount();
+        int filas = PantallaVentas.ModalCorteDelDia.ListaSalidas.getRowCount();
         double totalE = 0.0;
         for (int i = 0; i < filas; i++) {
-            totalE = totalE + Double.parseDouble(Ventas.ModalCorteDelDia.ListaSalidas.getValueAt(i, 1).toString());
+            totalE = totalE + Double.parseDouble(PantallaVentas.ModalCorteDelDia.ListaSalidas.getValueAt(i, 1).toString());
         }
-        Ventas.ModalCorteDelDia.lblS.setText(String.valueOf(totalE));
+        PantallaVentas.ModalCorteDelDia.lblS.setText(String.valueOf(totalE));
     }
 
     public static void corteTotal() {
-        double entradas = Double.parseDouble(Ventas.ModalCorteDelDia.lblE.getText());
-        double salidas = Double.parseDouble(Ventas.ModalCorteDelDia.lblS.getText());
-        Ventas.ModalCorteDelDia.total.setText(String.valueOf(entradas - salidas));
+        double entradas = Double.parseDouble(PantallaVentas.ModalCorteDelDia.lblE.getText());
+        double salidas = Double.parseDouble(PantallaVentas.ModalCorteDelDia.lblS.getText());
+        PantallaVentas.ModalCorteDelDia.total.setText(String.valueOf(entradas - salidas));
     }
 
     public static void calcular() {
@@ -228,32 +228,32 @@ public class Opciones {
         int cantidad;
         double imp = 0.0;
 
-        for (int i = 0; i < Ventas.Ventas.tablaVentas.getRowCount(); i++) {
-            pre = Ventas.Ventas.tablaVentas.getValueAt(i, 4).toString();
-            can = Ventas.Ventas.tablaVentas.getValueAt(i, 3).toString();
+        for (int i = 0; i < PantallaVentas.Ventas.tablaVentas.getRowCount(); i++) {
+            pre = PantallaVentas.Ventas.tablaVentas.getValueAt(i, 4).toString();
+            can = PantallaVentas.Ventas.tablaVentas.getValueAt(i, 3).toString();
             precio = Double.parseDouble(pre);
             cantidad = Integer.parseInt(can);
             imp = precio * cantidad;
             total = total + imp;
-            Ventas.Ventas.tablaVentas.setValueAt(Math.rint(imp * 100) / 100, i, 5);
+            PantallaVentas.Ventas.tablaVentas.setValueAt(Math.rint(imp * 100) / 100, i, 5);
 
         }
-        Ventas.Ventas.lblTotal.setText("" + Math.rint(total * 100) / 100);
+        PantallaVentas.Ventas.lblTotal.setText("" + Math.rint(total * 100) / 100);
     }
 
     public static void corteCaja() {
-        int filas = Ventas.ListaVentas.tabla.getRowCount();
+        int filas = PantallaVentas.ListaVentas.tabla.getRowCount();
         double totalE = 0.0;
         for (int i = 0; i < filas; i++) {
-            totalE = totalE + Double.parseDouble(ventas.ListaVentas.tabla.getValueAt(i, 3).toString());
+            totalE = totalE + Double.parseDouble(PantallaVentas.ListaVentas.tabla.getValueAt(i, 3).toString());
         }
-        Ventas.ListaVentas.lblTotal1.setText(String.valueOf(totalE));
+        PantallaVentas.ListaVentas.lblTotal1.setText(String.valueOf(totalE));
     }
 
     public static void enviar(int codigo, int cantidad) {
-        DefaultTableModel tabladet = (DefaultTableModel) ventas.Ventas.tablaVentas.getModel();
+        DefaultTableModel tabladet = (DefaultTableModel) PantallaVentas.Ventas.tablaVentas.getModel();
         String[] dato = new String[6];
-        int fila = Ventas.Productos.tabla.getSelectedRow();
+        int fila = PantallaVentas.Productos.tabla.getSelectedRow();
 
         String sql = "SELECT * FROM producto WHERE idproducto = " + codigo;
         String cod = String.valueOf(codigo);
@@ -276,17 +276,17 @@ public class Opciones {
         int c = 0;
         int j = 0;
 
-        for (int i = 0; i < Ventas.Ventas.tablaVentas.getRowCount(); i++) {
-            Object com = Ventas.Ventas.tablaVentas.getValueAt(i, 0);
-            Object cant1 = Ventas.Ventas.tablaVentas.getValueAt(i, 3);
+        for (int i = 0; i < PantallaVentas.Ventas.tablaVentas.getRowCount(); i++) {
+            Object com = PantallaVentas.Ventas.tablaVentas.getValueAt(i, 0);
+            Object cant1 = PantallaVentas.Ventas.tablaVentas.getValueAt(i, 3);
             if (cod.equals(com)) {
                 j = i;
                 int cantT = Integer.parseInt(cant) + Integer.parseInt((String) cant1);
-                Ventas.Ventas.tablaVentas.setValueAt(String.valueOf(cantT), i, 3);
+                PantallaVentas.Ventas.tablaVentas.setValueAt(String.valueOf(cantT), i, 3);
                 c++;
                 calcular();
-                Ventas.Ventas.txtImporte.setText("");
-                Ventas.Ventas.txtCambio.setText("");
+                PantallaVentas.Ventas.txtImporte.setText("");
+                PantallaVentas.Ventas.txtCambio.setText("");
             }
         }
         if (c == 0) {
@@ -299,11 +299,11 @@ public class Opciones {
 
             tabladet.addRow(dato);
 
-            Ventas.Ventas.tablaVentas.setModel(tabladet);
+            PantallaVentas.Ventas.tablaVentas.setModel(tabladet);
             calcular();
 
-            Ventas.Ventas.txtImporte.setText("");
-            Ventas.Ventas.txtCambio.setText("");
+            PantallaVentas.Ventas.txtImporte.setText("");
+            PantallaVentas.Ventas.txtCambio.setText("");
         }
     }
 
@@ -318,9 +318,9 @@ public class Opciones {
             }
 
             if (c == 0) {
-                Ventas.Ventas.numVenta.setText("1");
+                PantallaVentas.Ventas.numVenta.setText("1");
             } else {
-                Ventas.Ventas.numVenta.setText(String.valueOf(c + 1));
+                PantallaVentas.Ventas.numVenta.setText(String.valueOf(c + 1));
             }
 
         } catch (SQLException ex) {

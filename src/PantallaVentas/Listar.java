@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Salidas;
+package PantallaVentas;
 
 import Producto.*;
 
@@ -11,14 +11,14 @@ import Producto.*;
  *
  * @author davidramos
  */
-public class listar {
+public class Listar {
     
     private String nombre;
     private String descripcion;
     private String tipo;
     private float precio;
 
-    public listar(String nombre, String descripcion, String tipo, float precio) {
+    public Listar(String nombre, String descripcion, String tipo, float precio) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.tipo = tipo;

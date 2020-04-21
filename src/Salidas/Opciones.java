@@ -88,12 +88,12 @@ public class Opciones {
     }
 
     public static void totalGastos() {
-        int filas = Salidas.Salidas.tabla.getRowCount();
+        int filas = Salidas.tabla.getRowCount();
         double totalE = 0.0;
         for (int i = 0; i < filas; i++) {
-            totalE = totalE + Double.parseDouble(Salidas.Salidas.tabla.getValueAt(i, 1).toString());
+            totalE = totalE + Double.parseDouble(Salidas.tabla.getValueAt(i, 1).toString());
         }
-        Salidas.Salidas.lblTotal1.setText(String.valueOf(totalE));
+        Salidas.lblTotal1.setText(String.valueOf(totalE));
     }
     
     public static void listar(String busca) {

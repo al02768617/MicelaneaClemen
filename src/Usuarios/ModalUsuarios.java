@@ -62,18 +62,20 @@ public class ModalUsuarios extends javax.swing.JDialog {
         titulo = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        tipo = new componentes.org1.bolivia.combo.SComboBox();
         txtUsuario = new app.bolivia.swing.JCTextField();
         jLabel7 = new javax.swing.JLabel();
         txtPassword = new jpass.JRPasswordField();
         jLabel8 = new javax.swing.JLabel();
         nombreUs = new javax.swing.JLabel();
+        tipo = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         limpiar = new principal.MaterialButton();
         registrar = new principal.MaterialButton();
         id = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(476, 498));
+        setSize(new java.awt.Dimension(476, 498));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -134,10 +136,6 @@ public class ModalUsuarios extends javax.swing.JDialog {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icono-usuario.png"))); // NOI18N
         jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, -1));
 
-        tipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TIPO USUARIO", "ADMINISTRADOR", "NORMAL" }));
-        tipo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel4.add(tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 240, 30));
-
         txtUsuario.setBorder(null);
         txtUsuario.setForeground(new java.awt.Color(58, 159, 171));
         txtUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -158,6 +156,9 @@ public class ModalUsuarios extends javax.swing.JDialog {
 
         nombreUs.setText("nombreUs");
         jPanel4.add(nombreUs, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 370, -1));
+
+        tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel4.add(tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 260, -1));
 
         panel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 420, 330));
 
@@ -455,7 +456,7 @@ public class ModalUsuarios extends javax.swing.JDialog {
     public static javax.swing.JLabel nombreUs;
     private java.awt.Panel panel1;
     public static principal.MaterialButton registrar;
-    public static componentes.org1.bolivia.combo.SComboBox tipo;
+    public static javax.swing.JComboBox<String> tipo;
     public static javax.swing.JLabel titulo;
     public static jpass.JRPasswordField txtPassword;
     public static app.bolivia.swing.JCTextField txtUsuario;

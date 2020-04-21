@@ -9,9 +9,9 @@ import alertas.principal.AlertaError;
 import alertas.principal.AlertaU;
 import javax.swing.JFrame;
 import javax.swing.ListSelectionModel;
-import tabla.EstiloTablaHeader;
-import tabla.EstiloTablaRenderer;
-import tabla.MyScrollbarUI;
+import Tabla.EstiloTablaHeader;
+import Tabla.EstiloTablaRenderer;
+import Tabla.MyScrollbarUI;
 
 /**
  *

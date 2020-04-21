@@ -90,6 +90,8 @@ public class Productos extends javax.swing.JDialog {
         cantidadAlmacen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(987, 610));
+        setPreferredSize(new java.awt.Dimension(987, 610));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -126,7 +128,7 @@ public class Productos extends javax.swing.JDialog {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(cerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, -1, 960, 60));
@@ -260,7 +262,7 @@ public class Productos extends javax.swing.JDialog {
                 int fila = this.tabla.getSelectedRow();
 
                 if (this.tabla.getValueAt(fila, 5).toString().equals("")) {
-                    Ventas.Opciones.enviar(Integer.parseInt(this.tabla.getValueAt(fila, 0).toString()), Integer.parseInt(this.txtCantidad.getText()));
+                    PantallaVentas.Opciones.enviar(Integer.parseInt(this.tabla.getValueAt(fila, 0).toString()), Integer.parseInt(this.txtCantidad.getText()));
                     this.txtCantidad.setText("");
                     this.dispose();
                 } else {
@@ -320,7 +322,7 @@ public class Productos extends javax.swing.JDialog {
                     int fila = this.tabla.getSelectedRow();
 
                     if (this.tabla.getValueAt(fila, 5).toString().equals("")) {
-                        Ventas.Opciones.enviar(Integer.parseInt(this.tabla.getValueAt(fila, 0).toString()), Integer.parseInt(this.txtCantidad.getText()));
+                        PantallaVentas.Opciones.enviar(Integer.parseInt(this.tabla.getValueAt(fila, 0).toString()), Integer.parseInt(this.txtCantidad.getText()));
                         this.txtCantidad.setText("");
                         this.dispose();
                     } else {
@@ -345,7 +347,7 @@ public class Productos extends javax.swing.JDialog {
                                 String fila2 = this.tabla.getValueAt(fila1, 0).toString();
                                 Opciones.listar("");
                                 seleccionaFila(fila2);
-                                Ventas.Opciones.enviar(Integer.parseInt(this.tabla.getValueAt(fila, 0).toString()), Integer.parseInt(this.txtCantidad.getText()));
+                                PantallaVentas.Opciones.enviar(Integer.parseInt(this.tabla.getValueAt(fila, 0).toString()), Integer.parseInt(this.txtCantidad.getText()));
                                 this.txtCantidad.setText("");
                                 this.dispose();
                             }

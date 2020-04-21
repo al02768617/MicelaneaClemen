@@ -84,6 +84,8 @@ public class ModalSalidas extends javax.swing.JDialog {
         registrar = new principal.MaterialButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(476, 530));
+        setPreferredSize(new java.awt.Dimension(476, 530));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
